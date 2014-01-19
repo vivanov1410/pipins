@@ -12,12 +12,14 @@ Introduction
 1.) Show you what the pins are actually meant for (by the Pi-Creators)
 
 2.) Alow you to update the pin with your custom description
+
 3.) Indicate how many pins you have in use
 
 Requirements
 ============
 
 1.) Sqlite
+
 2.) Python 2.7
 
 Current Version
