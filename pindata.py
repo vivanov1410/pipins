@@ -1,6 +1,13 @@
 import sqlite3
 import os
+
+# If you intend to execute pindata.py from other paths be sure to provide the path below.
+# If you place pindata.py in /home/user/pipins then do mofiy the path accordingly.
+# Example change ('pindata.db') ==> ('/home/user/pipins/pindata.db')
+
+#------- CHANGE PATH HERE ---------
 db = sqlite3.connect ('pindata.db')
+#----------------------------------
 curs = db.cursor()
 x = curs.execute
 def createtable():
