@@ -10,6 +10,7 @@ Introduction
 "pipins" pronounced "pip-pins", essentially I found it quite,annoying trying to keep track of what pin was hooked up to what on the Raspberry Pi, so though I would create a super lightweight little python application that would ...
 
 1.) Show you what the pins are actually meant for (by the Pi-Creators)
+
 2.) Alow you to update the pin with your custom description
 3.) Indicate how many pins you have in use
 
