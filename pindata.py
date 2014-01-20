@@ -87,6 +87,7 @@ if check < 1:
 true = 1
 while true:
     os.system("clear")
+    os.system("cls")
     x ('select * from pindata')
     result = curs.fetchall()
     print '%-5s %-30s %-20s' % ("Pin","Description","Default")
