@@ -1,5 +1,5 @@
 import sqlite3
-import subprocess
+import os
 
 # If you intend to execute pindata.py from other paths be sure to provide the path below.
 # If you place pindata.py in /home/user/pipins then do mofiy the path accordingly.
@@ -86,11 +86,8 @@ if check < 1:
 
 true = 1
 while true:
-    subprocess.call("clear")
-    try:
-        subprocess.call("cls")
-    except:
-	pass
+    os.system("clear")
+ 
     x ('select * from pindata')
     result = curs.fetchall()
     print '%-5s %-30s %-20s' % ("Pin","Description","Default")
