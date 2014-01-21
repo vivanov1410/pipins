@@ -1,5 +1,6 @@
-from peewee import *
 import os
+from peewee import *
+from termcolor import colored
 
 # path to you database, default is current folder
 DB_PATH = 'pindata.db'
@@ -65,10 +66,17 @@ while True:
   pins = Pin.select()
 
   # header
-  print '%-5s %-25s %-10s %-30s' % ( 'Pin', 'About', 'Assigned?', 'Description' )
+  print( colored( '%-5s %-25s %-10s %-30s' % ( 'Pin', 'About', 'Assigned?', 'Description' ), attrs=['bold'] ) )
   print '-----------------------------------------------------------'
+  
   for pin in pins:
-    print '%-5s %-25s %-10s %-30s' % ( pin.number, pin.about, 'Y' if pin.assigned else 'N', pin.description)
+    assigned = 'Y' if pin.assigned else 'N'
+    description = '' if pin.description is None else pin.description
+    text = '%-5s %-25s %-10s %-30s' % ( pin.number, pin.about, assigned, description )
+    if pin.assigned:
+      text = colored( text, 'red' )    
+    
+    print( text )
 
   number_of_used_pins = pins.where( Pin.assigned == True ).count()
   print 'Pin(s) currently in use: %d' % number_of_used_pins
